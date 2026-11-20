@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- __TITLE__, __DESC__, __URL__ заполняет fill-meta.ps1 при публикации (превью ссылки в Telegram, WhatsApp) -->
+<title>Լիալուսին &amp; Արևշատ — հարսանեկան հրավեր</title>
+<meta name="description" content="Հարսանեկան հրավեր &#183; 27 &#183; 07 &#183; 2027">
+<meta name="theme-color" content="#14110f">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Լիալուսին &amp; Արևշատ — հարսանեկան հրավեր">
+<meta property="og:description" content="Հարսանեկան հրավեր &#183; 27 &#183; 07 &#183; 2027">
+<meta property="og:image" content="https://inviteluu.github.io/lialusin-arevshat/img/hero.jpg">
+<meta property="og:url" content="https://inviteluu.github.io/lialusin-arevshat/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,300;1,400;1,500&family=Google+Sans:wght@400..700&family=Noto+Sans+Armenian:wdth,wght@62.5..100,300..900&family=Noto+Serif+Armenian:wdth,wght@62.5..100,200..600&family=Unbounded:wght@300..800&display=swap">
+<link rel="stylesheet" href="style.css">
+<script src="data.js"></script>
+<script>
+  (function () {
+    var W = window.WEDDING || {};
+    if (W.lang) document.documentElement.lang = W.lang;
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  })();
+</script>
+</head>
+<body class="locked">
+<div class="app" id="app">
+
+  <!-- 0. Стеклянные двери: касание → створки открываются, камера проходит внутрь -->
+  <div class="doors" id="doors" role="button" tabindex="0" aria-label="Open">
+    <div class="dr-room" id="drRoom">
+      <svg class="dr-wall" id="drWall" aria-hidden="true"></svg>
+      <div class="dr-way" id="drWay">
+        <div class="leaf l" id="leafL">
+          <div class="glass"><img class="frost" data-photo="hero" alt=""><i class="tint"></i><i class="etch-line"></i>
+            <span class="medal"><b data-t="initials.0"></b></span><i class="shine"></i></div>
+          <i class="panel"></i><i class="handle"></i>
+        </div>
+        <div class="leaf r" id="leafR">
+          <div class="glass"><img class="frost" data-photo="hero" alt=""><i class="tint"></i><i class="etch-line"></i>
+            <span class="medal"><b data-t="initials.1"></b></span><i class="shine"></i></div>
+          <i class="panel"></i><i class="handle"></i>
+        </div>
+        <i class="way-shade"></i>
+      </div>
+    </div>
+    <div class="dr-ui" id="drUi">
+      <p class="dr-top" data-t="ui.envTop"></p>
+      <p class="dr-names"><span data-t="_.first"></span> <i>&amp;</i> <span data-t="_.second"></span></p>
+      <p class="dr-hint"><i class="dot"></i><span data-t="ui.doorsHint"></span></p>
+    </div>
+  </div>
+
+  <!-- шапка: монограмма и дата (цвет сам меняется под фон) -->
+  <div class="bar" id="bar">
+    <p class="bar-mono"><span data-t="_.i1"></span><i>&amp;</i><span data-t="_.i2"></span></p>
+    <p class="bar-date" data-t="_.dateShort"></p>
+  </div>
+
+  <!-- 1. «Прогулка»: сцена стоит на месте, прокрутка ведёт камеру через фото -->
+  <section class="film" id="film">
+    <div class="stage" id="stage">
+      <figure class="ph" id="phHero"><img data-photo="hero" alt=""></figure>
+      <figure class="ph" id="phClose"><img data-photo="close" alt=""></figure>
+      <figure class="ph" id="phHands"><img data-photo="hands" alt=""></figure>
+      <i class="shade" id="shade"></i>
+      <i class="dark" id="dark"></i>
+
+      <div class="txt t-hero" id="tHero">
+        <h1 class="names" id="names">
+          <span class="nm nm1" data-t="_.first" data-up></span>
+          <span class="nm nm2"><i>&amp;</i><span data-t="_.second" data-up></span></span>
+        </h1>
+        <p class="meta"><span data-t="_.dateDots"></span><span data-t="ui.envTop" data-up></span></p>
+      </div>
+
+      <div class="txt t-invite" id="tInvite">
+        <p class="big" data-t="film.inviteBig" data-up data-words></p>
+        <p class="acc" data-t="film.inviteAccent" data-words></p>
+      </div>
+
+      <div class="txt t-date" id="tDate">
+        <p class="kick" data-t="film.dateKicker" data-up></p>
+        <p class="huge" data-t="_.ddmm"></p>
+        <p class="acc" data-t="_.year"></p>
+      </div>
+
+      <div class="txt t-letter" id="tLetter">
+        <p class="kick" data-t="invite.title" data-up></p>
+        <p class="para" id="para"></p>
+        <div class="count" id="count">
+          <p class="kick" data-t="ui.countLabel" data-up></p>
+          <div class="cells">
+            <div><b data-c="d">0</b><span data-t="ui.countUnits.0"></span></div>
+            <div><b data-c="h">00</b><span data-t="ui.countUnits.1"></span></div>
+            <div><b data-c="m">00</b><span data-t="ui.countUnits.2"></span></div>
+            <div><b data-c="s">00</b><span data-t="ui.countUnits.3"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="cue" id="cue"><span data-t="ui.scroll"></span><i></i></p>
+    </div>
+  </section>
+
+  <!-- 2. Программа: карточки столбиком -->
+  <section class="prog" id="prog">
+    <h2 class="prog-head big rv" data-t="programTitle" data-up></h2>
+    <div class="track" id="track"></div>
+  </section>
+
+  <!-- 3. Анкета гостя: ответы уходят на почту (data.js → rsvp.email) -->
+  <section class="rsvp" id="rsvp">
+    <h2 class="rv"><span class="big" data-t="ui.rsvpBig" data-up></span> <span class="acc" data-t="ui.rsvpAccent"></span></h2>
+    <p class="lead rv"><span data-t="ui.rsvpLead"></span> <b data-t="rsvp.until"></b></p>
+    <form id="rsvpForm" class="rv" novalidate>
+      <label class="fld"><span data-t="ui.fName"></span><input name="name" autocomplete="name" required></label>
+      <fieldset>
+        <legend data-t="ui.fAttend"></legend>
+        <label class="pill"><input type="radio" name="attend" data-val="ui.attendYes" required><span data-t="ui.attendYes"></span></label>
+        <label class="pill"><input type="radio" name="attend" data-val="ui.attendNo"><span data-t="ui.attendNo"></span></label>
+      </fieldset>
+      <fieldset>
+        <legend data-t="ui.fSide"></legend>
+        <label class="pill"><input type="radio" name="side" data-val="ui.sideGroom"><span data-t="ui.sideGroom"></span></label>
+        <label class="pill"><input type="radio" name="side" data-val="ui.sideBride"><span data-t="ui.sideBride"></span></label>
+      </fieldset>
+      <label class="fld"><span data-t="ui.fCount"></span><input name="count" type="number" inputmode="numeric" min="1" max="99" data-ph="ui.countPlaceholder"></label>
+      <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="form-err" id="formErr" hidden></p>
+      <button class="btn" type="submit" data-t="ui.send"></button>
+    </form>
+    <div class="done" id="rsvpDone" hidden>
+      <p class="thanks" data-t="ui.thanks"></p>
+      <p class="lead" data-t="ui.thanksText"></p>
+    </div>
+  </section>
+
+  <!-- 4. Подвал: огромные имена -->
+  <footer class="foot" id="foot">
+    <p class="foot-acc rv" data-t="closing"></p>
+    <p class="foot-date rv" data-t="_.dateDots"></p>
+    <div class="giant" id="giant">
+      <span data-t="_.first" data-up></span>
+      <span><i>&amp;</i><span data-t="_.second" data-up></span></span>
+    </div>
+  </footer>
+
+  <button class="music" id="music" type="button" hidden aria-label="Music"><i></i><i></i><i></i></button>
+</div>
+
+<script src="sketches.js"></script>
+<script src="app.js"></script>
+<script src="doors.js"></script>
+</body>
+</html>
