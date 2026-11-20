@@ -22,6 +22,7 @@
   (function () {
     var W = window.WEDDING || {};
     if (W.lang) document.documentElement.lang = W.lang;
+    if (W.upperNames === false) document.documentElement.classList.add('names-asis');   // имена как написаны, без заглавных
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   })();
 </script>

@@ -20,14 +20,13 @@ D._ = {
   dateDots: `${p2(dt.getDate())} · ${p2(dt.getMonth() + 1)} · ${dt.getFullYear()}`,
   dateShort: `${p2(dt.getDate())}.${p2(dt.getMonth() + 1)}.${String(dt.getFullYear()).slice(2)}`,
   ddmm: `${p2(dt.getDate())}.${p2(dt.getMonth() + 1)}`,
-  year: String(dt.getFullYear()),
-  weekday: UI.weekdaysLong[(dt.getDay() + 6) % 7]
+  year: String(dt.getFullYear())
 };
 
 /* ---------- тексты и фото ---------- */
 const get = path => path.split('.').reduce((o, k) => o == null ? o : o[k], D);
 // «և» заглавными должно стать «ԵՎ», а браузер пишет «ԵՒ» — в заглавных блоках меняем заранее
-const isUpper = el => el.hasAttribute('data-up') || getComputedStyle(el).textTransform === 'uppercase';
+const isUpper = el => getComputedStyle(el).textTransform === 'uppercase';
 const words = v => String(v).split(/\s+/).filter(Boolean).map(w => `<span class="w">${esc(w)}</span>`).join(' ');
 document.querySelectorAll('[data-t]').forEach(el => {
   let v = get(el.dataset.t);
@@ -39,7 +38,7 @@ document.querySelectorAll('[data-ph]').forEach(el => { const v = get(el.dataset.
 document.querySelectorAll('[data-val]').forEach(el => { const v = get(el.dataset.val); if (v != null) el.value = v; });
 document.querySelectorAll('img[data-photo]').forEach(img => { const s = D.photos[img.dataset.photo]; if (s) img.src = s; });
 document.title = `${first} & ${second} — ${UI.docTitle}`;
-$('para').innerHTML = words(D.invite.text);
+$('para').innerHTML = String(D.invite.text).split('\n').map(words).join('<br>');   // перенос строки в тексте письма — новая строка
 
 /* ---------- программа: карточки столбиком и календарь ---------- */
 const SK = window.SKETCHES;

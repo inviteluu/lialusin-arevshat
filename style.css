@@ -105,6 +105,9 @@ body.open .bar{opacity:1}
 .nm{display:block;width:max-content;white-space:nowrap}
 .nm2{margin-left:auto}
 .nm2 > i{font-family:var(--f-serif);font-style:italic;font-weight:300;text-transform:none;color:var(--gold);font-size:.86em;margin-right:.14em}
+/* upperNames: false в data.js — имена как написаны: в заглавных «և» стало бы «ԵՎ» */
+.names-asis .names,.names-asis .giant{text-transform:none;letter-spacing:-.005em}
+.names-asis .giant{line-height:.95;padding-bottom:.2em}
 .t-hero .meta{display:flex;justify-content:space-between;gap:12px;margin-top:18px;padding-top:12px;border-top:1px solid rgba(244,238,229,.36);
   font:500 10.5px/1.2 var(--f-body);letter-spacing:.22em;text-transform:uppercase}
 
